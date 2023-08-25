@@ -1,9 +1,11 @@
-/* @refresh reload */
-import { render } from 'solid-js/web';
+import { render } from 'solid-js/web'
 
-import './index.css';
-import App from './App';
+import './index.css'
+import 'uno.css'
+import '@unocss/reset/tailwind.css'
 
-const root = document.getElementById('root');
+import App from './App'
 
-render(() => <App />, root!);
+const root = document.getElementById('root')
+
+render(() => <App />, root!)

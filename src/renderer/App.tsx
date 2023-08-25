@@ -1,9 +1,9 @@
-import type { Component } from "solid-js";
-import logoElectron from "./assets/electron.svg";
-import logoVite from "./assets/vite.svg";
-import logoSolid from "./assets/solid.svg";
-import styles from './App.module.css';
-import HelloWorld from "./components/HelloWorld";
+import type { Component } from 'solid-js'
+import logoElectron from './assets/electron.svg'
+import logoVite from './assets/vite.svg'
+import logoSolid from './assets/solid.svg'
+import styles from './App.module.css'
+import HelloWorld from './components/HelloWorld'
 
 const App: Component = () => {
   return (
@@ -19,7 +19,7 @@ const App: Component = () => {
       </a>
       <HelloWorld msg="Hello World!" />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

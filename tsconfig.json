@@ -11,9 +11,13 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "types": ["vite/client"],
+    "types": [
+      "vite/client"
+    ],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

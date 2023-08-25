@@ -1,11 +1,11 @@
-import { Component, createSignal } from "solid-js";
+import { Component, createSignal } from 'solid-js'
 
 interface Props {
-  msg: string;
+  msg: string
 }
 
 const HelloWorld: Component<Props> = (props: Props) => {
-  const [count, setCount] = createSignal(0);
+  const [count, setCount] = createSignal(0)
   return (
     <div>
       <h1>{props.msg}</h1>
@@ -19,7 +19,7 @@ const HelloWorld: Component<Props> = (props: Props) => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HelloWorld;
+export default HelloWorld
