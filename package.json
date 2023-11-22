@@ -39,6 +39,8 @@
     "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
+    "@fluentui/web-components": "^2.5.16",
+    "@solidjs/router": "^0.9.1",
     "@unocss/reset": "^0.55.2",
     "electron-squirrel-startup": "^1.0.0",
     "solid-js": "^1.7.11"
