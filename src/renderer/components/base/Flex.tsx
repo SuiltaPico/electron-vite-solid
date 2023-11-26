@@ -1,32 +1,37 @@
-import { Component, JSX } from 'solid-js'
+import { Component, JSX, ParentComponent, mergeProps, splitProps } from 'solid-js'
 
-export const Row = (
-  props: Component<{
-    gap: number
-  }>
-) => {
+export const Row: ParentComponent<
+  {
+    gap?: number
+    class?: string
+  } & JSX.HTMLAttributes<HTMLDivElement>
+> = (props) => {
+  const [_props, others] = splitProps(props, ['gap', 'class'])
+
   return (
     <div
-      {...combindProps(props, 'flex', {
-        ...propsToStyle(props.gap, 'gap', (it) => `${toFloat(it) / 4}rem`),
-      })}
+      {...mergeProps(
+        {
+          ...{
+            class: [
+              `flex flex-row`,
+              _props.gap ? 'gap-' + _props.gap : '',
+              _props.class ?? '',
+            ].join(' '),
+          },
+        },
+        others
+      )}
     ></div>
   )
 }
 
-export const Column = (
-  props: Omit<DivProp, 'style'> & {
-    gap?: number | string
-    style?: JSX.CSSProperties
-  }
-) => {
-  return (
-    <div
-      {...{
-        ...combindProps(props, 'flex flex-col', {
-          ...propsToStyle(props.gap, 'gap', (it) => `${toFloat(it) / 4}rem`),
-        }),
-      }}
-    ></div>
-  )
+export const Column: ParentComponent<
+  {
+    gap?: number
+    class?: string
+  } & JSX.HTMLAttributes<HTMLDivElement>
+> = (props) => {
+  const [_props, others] = splitProps(props, ['gap', 'class'])
+  return <div {...mergeProps({ ...{ class: 'flex flex-col ' + props.class ?? '' } }, others)}></div>
 }
