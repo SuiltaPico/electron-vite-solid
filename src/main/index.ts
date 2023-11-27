@@ -27,14 +27,12 @@ const createWindow = () => {
   // mainWindow.webContents.openDevTools()
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+// 当 Electron 完成初始化并准备好创建浏览器窗口时，将调用此方法。
+// 某些API只有在该事件发生后才能使用。
 app.on('ready', createWindow)
 
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
+// 当所有窗口关闭时退出（macOS 除外）。
+// 在 macOS，应用程序及其菜单栏通常会保持活动状态，直到用户使用 Cmd + Q 显式退出。
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -42,8 +40,7 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
+  // 在 OS X 上，当单击停靠图标并且没有打开其他窗口时，通常会在应用程序中重新创建一个窗口。
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }
